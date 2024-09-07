@@ -19,5 +19,8 @@
 4. 할일 삭제하기 delete/tasks/:id<br>
 
 - task.api.js에 중복되는 task 관리
-- controller로 받은 정보 관리 (req,res)
+- controller로 받은 정보 관리 (req,res) -> 할일 추가 정보 저장과정
+- PostMan에서 데이터의 전송 테스트 (app -> api주소 있으면 -> index -> task)
+- `npm i nodemon` 실시간 서버 변경 반영
+- ` "start":"nodemon app.js"` json 에다가 명령어 추가 
 

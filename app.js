@@ -2,17 +2,19 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const indexRouter = require("./routes/index")
 require("dotenv").config();
 
 const app = express();
-app.use(cors())
+app.use(cors());
 
-app.use(bodyParser.urlencoded({extended:false}))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
+app.use("/api",indexRouter);
 
 const mongoURI=process.env.MONGODB_LOCAL;
 mongoose.connect(mongoURI)
 .then(()=>console.log("mongoose db"))
-.catch((err)=> console.log("db connected fail"))
+.catch((err)=> console.log("db connected fail"));
 
-app.listen(5000,()=>console.log("server on at 5000"))
+app.listen(5000,()=>console.log("server on at 5000"));
